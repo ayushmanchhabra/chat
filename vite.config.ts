@@ -12,13 +12,12 @@ export default defineConfig({
   root: "./web",
   plugins: [react(), tsconfigPaths()],
   server: {
-    https: false,
     host: process.env.VITE_HOSTNAME,
     port: Number(process.env.VITE_WEB_PORT),
   },
   test: {
     globals: true,
     environment: "jsdom",
-    setupFiles: "vitest.setup.ts",
+    setupFiles: "./vitest.setup.ts",
   },
 });

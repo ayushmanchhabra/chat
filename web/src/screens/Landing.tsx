@@ -2,6 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
 
+import content from './Landing.content';
 import style from './Landing.module.css';
 
 function Landing() {
@@ -10,11 +11,11 @@ function Landing() {
 
     return (
         <Box className={style.Box}>
-            <Typography variant="h4">Chat</Typography>
-            <Typography>A hosted chat app solution.</Typography>
+            <Typography data-testid="landing-title" variant="h4">{content.TITLE}</Typography>
+            <Typography data-testid="landing-description">{content.DESCRIPTION}</Typography>
             <Typography className={style.Typography}>
-                <Button className={style.Button} variant="contained">Sign Up</Button>
-                <Button className={style.Button} variant="contained">Sign In</Button>
+                <Button data-testid="landing-button-signup" className={style.Button} variant="contained">{content.BUTTON_SIGN_UP}</Button>
+                <Button data-testid="landing-button-signin" className={style.Button} variant="contained">{content.BUTTON_SIGN_IN}</Button>
             </Typography>
         </Box>
     );
