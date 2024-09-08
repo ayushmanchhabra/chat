@@ -3,11 +3,11 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev:web": "vite",
+        "dev:web": "vite --config ./vite.config.web.ts",
         "dev:api": "nodemon ./api/main.js",
         "dev": "concurrently npm:dev:web npm:dev:server",
-        "test:web": "vitest run ./web/**/*",
-        "test:api": "vitest run ./api/main.test.js",
+        "test:web": "vitest run --config ./vite.config.web.ts",
+        "test:api": "vitest run --config ./vite.config.api.ts",
         "test": "concurrently npm:test:web npm:test:api"
     },
     "dependencies": {
