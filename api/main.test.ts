@@ -1,7 +1,7 @@
 import request from 'supertest'
 import { describe, it, expect } from 'vitest'
 
-import app from './main.js'
+import app from './main'
 
 describe('Routes', () => {
     it('should respond with 200 on GET /', async () => {

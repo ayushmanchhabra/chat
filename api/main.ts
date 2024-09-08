@@ -1,4 +1,3 @@
-import https from 'node:https';
 import process from 'node:process';
 
 import { config } from 'dotenv';
