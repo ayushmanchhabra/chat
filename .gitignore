@@ -1,0 +1,8 @@
+# runtime
+.env
+node_modules
+
+# application
+coverage
+out
+./api/main.cjs

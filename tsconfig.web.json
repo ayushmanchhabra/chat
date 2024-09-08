@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "lib": [
+            "ESNext",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        "module": "ESNext",
+        "skipLibCheck": true,
+        /* Bundler mode */
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "noEmit": true,
+        "jsx": "react-jsx",
+        "typeRoots": [
+            "./web/src/types"
+        ],
+        "baseUrl": "./web/src",
+        "paths": {
+            "assets": [
+                "assets/index.ts"
+            ],
+            "components": [
+                "components/index.ts"
+            ],
+            "providers": [
+                "providers/index.ts"
+            ],
+            "screens": [
+                "screens/index.ts"
+            ]
+        },
+        /* Linting */
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true
+    },
+    "include": [
+        "./web"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+}
