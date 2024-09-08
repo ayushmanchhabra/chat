@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev:web": "vite --config ./vite.config.web.ts",
+        "dev:web": "vite --host --config ./vite.config.web.ts",
         "dev:api": "esbuild ./api/main.ts --outfile=./out/api/main.cjs --platform=node --bundle --watch & nodemon ./out/api/main.cjs",
         "dev": "concurrently npm:dev:web npm:dev:server",
         "test:web": "vitest run --config ./vite.config.web.ts",
