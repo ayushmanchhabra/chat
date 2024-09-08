@@ -11,7 +11,7 @@ const app = express();
 const hostname = process.env.HOSTNAME;
 const port = process.env.SERVER_PORT;
 
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   res.send('Hello World');
 });
 
