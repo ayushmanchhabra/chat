@@ -16,14 +16,7 @@ export default defineConfig({
     port: Number(process.env.VITE_WEB_PORT),
   },
   test: {
-    coverage: {
-      provider: 'v8',
-      reporter: ['json', 'json-summary'],
-      reportOnFailure: true,
-    },
     environment: "jsdom",
-    globals: true,
     setupFiles: "./vitest.setup.ts",
-    
-  },
+  }
 });

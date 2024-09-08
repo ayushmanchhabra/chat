@@ -6,7 +6,7 @@
         "dev:web": "vite",
         "dev:server": "nodemon ./server/index.js",
         "dev": "concurrently npm:dev:web npm:dev:server",
-        "test": "vitest run --coverage.enabled true"
+        "test": "vitest run"
     },
     "dependencies": {
         "@emotion/react": "^11.13.3",
@@ -24,7 +24,6 @@
         "@types/react": "^18.3.5",
         "@types/react-dom": "^18.3.0",
         "@vitejs/plugin-react-swc": "^3.7.0",
-        "@vitest/coverage-v8": "^2.0.5",
         "concurrently": "^8.2.2",
         "dotenv": "^16.4.5",
         "jsdom": "^25.0.0",
