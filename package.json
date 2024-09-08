@@ -4,9 +4,11 @@
     "type": "module",
     "scripts": {
         "dev:web": "vite",
-        "dev:server": "nodemon ./server/index.js",
+        "dev:api": "nodemon ./api/main.js",
         "dev": "concurrently npm:dev:web npm:dev:server",
-        "test": "vitest run"
+        "test:web": "vitest run ./web/**/*",
+        "test:api": "vitest run ./api/main.test.js",
+        "test": "concurrently npm:test:web npm:test:api"
     },
     "dependencies": {
         "@emotion/react": "^11.13.3",
@@ -30,6 +32,7 @@
         "nodemon": "^3.1.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "supertest": "^7.0.0",
         "ts-node": "^10.9.2",
         "typescript": "^5.5.4",
         "vite": "^5.4.3",

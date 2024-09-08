@@ -18,3 +18,5 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
   console.log(`Server is running on ${hostname}:${port}`);
 });
+
+export default app;
