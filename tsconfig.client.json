@@ -16,6 +16,9 @@
         "moduleDetection": "force",
         "noEmit": true,
         "jsx": "react-jsx",
+        "typeRoots": [
+            "./web/src/types"
+        ],
         "baseUrl": "./web/src",
         "paths": {
             "assets": [
@@ -27,7 +30,7 @@
             "providers": [
                 "providers/index.ts"
             ],
-            "routes": [
+            "screens": [
                 "screens/index.ts"
             ]
         },
@@ -38,7 +41,7 @@
         "noFallthroughCasesInSwitch": true
     },
     "include": [
-        "src"
+        "./web"
     ],
     "exclude": [
         "node_modules"

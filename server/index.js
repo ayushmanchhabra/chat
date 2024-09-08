@@ -1,11 +1,15 @@
 import https from 'node:https';
+import process from 'node:process';
 
+import { config } from 'dotenv';
 import express from 'express';
+
+config();
 
 const app = express();
 
-const hostname = import.meta.env.HOSTNAME;
-const port = import.meta.env.PORT;
+const hostname = process.env.HOSTNAME;
+const port = process.env.SERVER_PORT;
 
 app.get('/', (req, res) => {
   res.send('Hello World');
