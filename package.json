@@ -4,8 +4,8 @@
     "type": "module",
     "scripts": {
         "dev:web": "vite --host --config ./vite.config.web.ts",
-        "dev:api": "esbuild ./api/main.ts --outfile=./out/api/main.cjs --platform=node --bundle --watch & nodemon ./out/api/main.cjs",
-        "dev": "concurrently npm:dev:web npm:dev:server",
+        "dev:api": "esbuild ./api/main.ts --outfile=./out/api/main.cjs --platform=node --bundle --watch=forever & nodemon ./out/api/main.cjs",
+        "dev": "concurrently npm:dev:web npm:dev:api",
         "test:web": "vitest run --config ./vite.config.web.ts",
         "test:api": "vitest run --config ./vite.config.api.ts",
         "test": "concurrently npm:test:web npm:test:api"

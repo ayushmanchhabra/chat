@@ -7,15 +7,15 @@ config();
 
 const app = express();
 
-const hostname = process.env.HOSTNAME;
-const port = process.env.SERVER_PORT;
+const host = process.env.HOST;
+const port = process.env.API_PORT;
 
 app.get('/', (_, res) => {
   res.send('Hello World');
 });
 
 app.listen(3000, () => {
-  console.log(`Server is running on ${hostname}:${port}`);
+  console.log(`Server is running on ${host}:${port}`);
 });
 
 export default app;
