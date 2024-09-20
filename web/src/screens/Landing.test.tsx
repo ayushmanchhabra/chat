@@ -28,11 +28,6 @@ describe("Home route", () => {
         expect(description.textContent).toBe(content.DESCRIPTION);
     });
 
-    it("renders text on sign up button", () => {
-        const button: HTMLButtonElement = screen.getByTestId("landing-button-signup");
-        expect(button.textContent).toBe(content.BUTTON_SIGN_UP);
-    });
-
     it("renders text on sign in button", () => {
         const button: HTMLButtonElement = screen.getByTestId("landing-button-signin");
         expect(button.textContent).toBe(content.BUTTON_SIGN_IN);

@@ -4,12 +4,12 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
-import Screens from './screens';
+import { Landing } from './screens';
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Screens.Landing />,
+        element: <Landing />,
     },
 ]);
 

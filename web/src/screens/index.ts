@@ -1,5 +1,5 @@
 import Landing from "./Landing";
 
-export default {
+export {
     Landing,
 };
