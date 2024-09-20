@@ -5,19 +5,33 @@ import {
     Route,
 } from "react-router-dom";
 
-import { Landing } from './screens';
+import { useUser } from "providers/hooks";
+import { Dashboard, Landing, Signin } from 'screens';
 
 function App() {
+
+    const { UserProvider } = useUser();
+
     return (
         <StyledEngineProvider injectFirst>
-            <Router>
-                <Routes>
-                    <Route
-                        element={<Landing />}
-                        path='/'
-                    />
-                </Routes>
-            </Router>
+            <UserProvider>
+                <Router>
+                    <Routes>
+                        <Route
+                            element={<Landing />}
+                            path='/'
+                        />
+                        <Route
+                            element={<Signin />}
+                            path='/signin'
+                        />
+                        <Route
+                            element={<Dashboard />}
+                            path='/dashboard'
+                        />
+                    </Routes>
+                </Router>
+            </UserProvider>
         </StyledEngineProvider>
     );
 }
