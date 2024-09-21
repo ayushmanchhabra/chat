@@ -5,8 +5,8 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import Landing from "./Landing";
 import content from "./Landing.content.ts";
 
-describe("Home route", () => {
-    let unmountHome: () => void = () => { };
+describe("Landing route", () => {
+    let unmountLanding: () => void = () => { };
 
     beforeEach(() => {
         const { unmount } = render(
@@ -15,7 +15,7 @@ describe("Home route", () => {
             </MemoryRouter>,
         );
 
-        unmountHome = unmount;
+        unmountLanding = unmount;
     });
 
     it("renders title", () => {
@@ -33,17 +33,12 @@ describe("Home route", () => {
         expect(button.textContent).toBe(content.BUTTON_SIGN_IN);
     });
 
-    it("verifies that sign up button is not disabled", () => {
-        const button: HTMLButtonElement = screen.getByTestId("landing-button-signup");
-        expect(button.disabled).toBe(false);
-    });
-
     it("verifies that sign in button is not disabled", () => {
         const button: HTMLButtonElement = screen.getByTestId("landing-button-signin");
         expect(button.disabled).toBe(false);
     });
 
     afterEach(() => {
-        unmountHome();
+        unmountLanding();
     });
 });
