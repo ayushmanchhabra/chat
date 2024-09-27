@@ -10,7 +10,7 @@ import style from './Landing.module.css';
 function Landing() {
 
     const navigate = useNavigate();
-    const { user } = useUser();
+    const { user, setUser } = useUser();
 
     const handleButtonClick = React.useCallback(() => {
         if (user) {
@@ -19,6 +19,10 @@ function Landing() {
             navigate('/signin');
         }
     }, [navigate, user]);
+
+    const handleSignOut = React.useCallback(() => {
+        setUser(null);
+    }, [user]);
 
     return (
         <Box className={style.Box}>
@@ -33,6 +37,14 @@ function Landing() {
                 >
                     {user ? content.BUTTON_DASHBOARD : content.BUTTON_SIGN_IN}
                 </Button>
+                {user && <Button
+                    className={style.Button}
+                    data-testid="landing-button-signout"
+                    onClick={handleSignOut}
+                    variant="contained"
+                >
+                    {content.BUTTON_SIGN_OUT}
+                </Button>}
             </Typography>
         </Box>
     );

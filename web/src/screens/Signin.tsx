@@ -27,11 +27,11 @@ function Signin(): JSX.Element {
 
     const handleUsernameChange = React.useCallback((event: any) => {
         setUsername(event.target.value);
-    }, [username]);
+    }, [setUsername]);
 
     const handlePasswordChange = React.useCallback((event: any) => {
         setPassword(event.target.value);
-    }, [password]);
+    }, [setPassword]);
 
     const handleButtonClick = React.useCallback(async (event: any) => {
         event.preventDefault();
@@ -39,13 +39,12 @@ function Signin(): JSX.Element {
         try {
             response = await signin(username, password);
             if (response.status === 200) {
-                setUser({ isAuthenticated: true });
+                setUser({ isAuthenticated: true, isAdmin: true });
             }
         } catch (error: any) {
-            console.log(error)
             setErrorMsg(error.response.data.message);
         }
-    }, []);
+    }, [username, password]);
 
     return (
         <Box className={style.Box}>
