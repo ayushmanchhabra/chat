@@ -27,7 +27,6 @@ app.get('/', (req, res, next) => {
 });
 
 app.post('/api/v1/auth/signin', (req, res, next) => {
-
   if (
     (req.body.username === admin_user) &&
     (req.body.password === admin_pswd)
@@ -42,6 +41,14 @@ app.post('/api/v1/auth/signin', (req, res, next) => {
       message: 'Invalid username or password',
     });
   }
+});
+
+app.get('/api/v1/channel/all', (req, res, next) => {
+  
+});
+
+app.get('/api/v1/user/all', (req, res, next) => {
+  
 });
 
 app.listen(3000, () => {
