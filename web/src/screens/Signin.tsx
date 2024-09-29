@@ -50,7 +50,7 @@ function Signin(): JSX.Element {
         <Box className={style.Box}>
             <Card className={style.Card} variant='outlined'>
                 <CardHeader title={content.TITLE} />
-                <CardContent >
+                <CardContent>
                     <TextField
                         className={style.TextField}
                         onChange={handleUsernameChange}
@@ -65,9 +65,9 @@ function Signin(): JSX.Element {
                         type='password'
                         value={password}
                     />
+                    <br />
                     {errorMsg !== '' && <Typography className={style.Error}>{errorMsg}</Typography>}
-                </CardContent>
-                <CardActions className={style.CardActions}>
+                    <br />
                     <Button
                         children={content.BUTTON}
                         onClick={handleButtonClick}
@@ -79,7 +79,7 @@ function Signin(): JSX.Element {
                         }}
                         variant='contained'
                     />
-                </CardActions>
+                </CardContent>
             </Card>
         </Box>
     );
