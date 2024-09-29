@@ -43,14 +43,6 @@ app.post('/api/v1/auth/signin', (req, res, next) => {
   }
 });
 
-app.get('/api/v1/channel/all', (req, res, next) => {
-  
-});
-
-app.get('/api/v1/user/all', (req, res, next) => {
-  
-});
-
 app.listen(3000, () => {
   console.log(`Server is running on ${host}:${api_port}`);
 });
