@@ -1,22 +1,37 @@
 import { StyledEngineProvider } from "@mui/material";
 import {
-    createBrowserRouter,
-    RouterProvider,
+    BrowserRouter as Router,
+    Routes,
+    Route,
 } from "react-router-dom";
 
-import Screens from './screens';
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Screens.Landing />,
-    },
-]);
+import { useUser } from "providers/hooks";
+import { Dashboard, Landing, Signin } from 'screens';
 
 function App() {
+
+    const { UserProvider } = useUser();
+
     return (
         <StyledEngineProvider injectFirst>
-            <RouterProvider router={router} />
+            <UserProvider>
+                <Router>
+                    <Routes>
+                        <Route
+                            element={<Landing />}
+                            path='/'
+                        />
+                        <Route
+                            element={<Signin />}
+                            path='/signin'
+                        />
+                        <Route
+                            element={<Dashboard />}
+                            path='/dashboard'
+                        />
+                    </Routes>
+                </Router>
+            </UserProvider>
         </StyledEngineProvider>
     );
 }

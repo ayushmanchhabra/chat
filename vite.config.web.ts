@@ -12,7 +12,7 @@ export default defineConfig({
   root: "./web",
   plugins: [react(), tsconfigPaths()],
   server: {
-    host: process.env.VITE_HOSTNAME,
+    host: process.env.VITE_HOST,
     port: Number(process.env.VITE_WEB_PORT),
   },
   test: {
