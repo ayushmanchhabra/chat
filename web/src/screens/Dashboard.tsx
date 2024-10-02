@@ -46,7 +46,7 @@ function Dashboard(): JSX.Element {
             <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
                 Inbox
             </Typography>
-            <List>
+            <List sx={{width: '100%'}}>
                 {chats.map((chat: Channel, idx: number) => (
                     <ListItemButton key={idx}>
                         <ListItemAvatar>
